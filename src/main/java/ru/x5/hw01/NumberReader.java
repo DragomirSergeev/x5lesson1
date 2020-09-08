@@ -7,13 +7,12 @@ public class NumberReader {
 
         Scanner scanner = new Scanner(System.in);
         String entered = "";
-        boolean correctLine = false;
 
-        while (!correctLine) {
+        while (true) {
             entered = scanner.nextLine();
             try {
                 Integer.parseInt(entered);
-                correctLine = true;
+                break;
             } catch (NumberFormatException e) {
                 System.out.println("Entered value is not a number!");
             }
@@ -23,22 +22,7 @@ public class NumberReader {
     }
 
     public static int readCorrectInt() {
-
-        Scanner scanner = new Scanner(System.in);
-        String entered = "";
-        boolean correctLine = false;
-
-        while (!correctLine) {
-            entered = scanner.nextLine();
-            try {
-                Integer.parseInt(entered);
-                correctLine = true;
-            } catch (NumberFormatException e) {
-                System.out.println("Entered value is not a number!");
-            }
-        }
-        scanner.close();
-        return Integer.parseInt(entered);
+        return Integer.parseInt(readCorrectString());
     }
 
     public static String readCorrectString(int count) {

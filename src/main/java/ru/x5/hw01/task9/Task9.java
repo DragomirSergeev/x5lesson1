@@ -13,8 +13,9 @@ public class Task9 {
             array[i] = last;
         }
         for (int i : array) {
-            System.out.print(i);
+            System.out.print(i+" ");
         }
         System.out.println();
+        //Вывод нечитаемый, так как в задаче указано поменять местами значения непосредственно в массиве, а не выводить.
     }
 }

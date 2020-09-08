@@ -10,18 +10,14 @@ public class Task8 {
 
         int sumPositive = 0;
         int countPossitiive = 0;
+        int sumNegP = 0;
+        int sumNeg = 0;
+        int countNegative = 0;
         for (int i : array) {
             if (i > 0) {
                 sumPositive += i;
                 countPossitiive++;
             }
-        }
-        System.out.println(sumPositive + " - сумма положительных эллементов");
-
-        int sumNegP = 0;
-        int sumNeg = 0;
-        int countNegative = 0;
-        for (int i : array) {
             if (i < 0) {
                 if (i % 2 == 0) {
                     sumNegP += i;
@@ -30,6 +26,8 @@ public class Task8 {
                 countNegative++;
             }
         }
+        System.out.println(sumPositive + " - сумма положительных эллементов");
+
         System.out.println(sumNegP + " - сумма четтных отрицательнных");
 
         System.out.println(countPossitiive + " - количество положительных элементов");
