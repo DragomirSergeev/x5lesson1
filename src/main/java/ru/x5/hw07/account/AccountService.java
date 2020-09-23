@@ -1,4 +1,4 @@
-package ru.x5.hw07.accounteStore;
+package ru.x5.hw07.account;
 
 import ru.x5.hw07.storage.Storage;
 

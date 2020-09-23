@@ -1,6 +1,6 @@
 package ru.x5.hw07;
 
-import ru.x5.hw07.accounteStore.*;
+import ru.x5.hw07.account.*;
 import ru.x5.hw07.storage.DBStorage;
 import ru.x5.hw07.storage.FileStorage;
 import ru.x5.hw07.storage.Storage;
