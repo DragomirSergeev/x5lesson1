@@ -6,17 +6,17 @@ public class Lorry extends Car {
 
 
     @Override
-    void start() {
+    public void start() {
         System.out.println("Грузовик поехал");
     }
 
     @Override
-    void stop() {
+    public void stop() {
         System.out.println("Грузовик остановился");
     }
 
     @Override
-    void printInfo() {
+    public void printInfo() {
         System.out.println("Марка: " + mark + "\n" +
                 "Класс: " + classAuto + "\n" +
                 "Вес: " + weight + "\n" +

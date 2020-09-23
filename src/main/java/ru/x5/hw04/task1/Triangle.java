@@ -5,6 +5,15 @@ public class Triangle implements Shape {
     int bSide;
     int cSide;
 
+    public Triangle() {
+    }
+
+    public Triangle(int height, int bSide, int cSide) {
+        this.height = height;
+        this.bSide = bSide;
+        this.cSide = cSide;
+    }
+
     public int getHeight() {
         return height;
     }
@@ -30,7 +39,7 @@ public class Triangle implements Shape {
     }
 
     @Override
-    public int square() {
+    public double square() {
         return cSide * height / 2;
     }
 }

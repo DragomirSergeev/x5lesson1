@@ -6,17 +6,49 @@ public abstract class Car {
     protected double weight;
     protected Engine engine;
 
-    abstract void start();
+    public abstract void start();
 
-    abstract void stop();
+    public abstract void stop();
 
-    void turnRight() {
+    public void turnRight() {
         System.out.println("Поворот направо");
     }
 
-    void turnLeft() {
+    public void turnLeft() {
         System.out.println("Поворот налево");
     }
 
-    abstract void printInfo();
+    public abstract void printInfo();
+
+    public String getMark() {
+        return mark;
+    }
+
+    public void setMark(String mark) {
+        this.mark = mark;
+    }
+
+    public String getClassAuto() {
+        return classAuto;
+    }
+
+    public void setClassAuto(String classAuto) {
+        this.classAuto = classAuto;
+    }
+
+    public double getWeight() {
+        return weight;
+    }
+
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
+
+    public Engine getEngine() {
+        return engine;
+    }
+
+    public void setEngine(Engine engine) {
+        this.engine = engine;
+    }
 }

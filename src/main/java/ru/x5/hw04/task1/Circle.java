@@ -3,6 +3,13 @@ package ru.x5.hw04.task1;
 public class Circle implements Shape {
     int radius;
 
+    public Circle(int radius) {
+        this.radius = radius;
+    }
+
+    public Circle() {
+    }
+
     public int getRadius() {
         return radius;
     }
@@ -12,7 +19,7 @@ public class Circle implements Shape {
     }
 
     @Override
-    public int square() {
-        return (int) ((radius * 3.14D) * (radius * 3.14D));
+    public double square() {
+        return 2*Math.PI*(radius*radius);
     }
 }

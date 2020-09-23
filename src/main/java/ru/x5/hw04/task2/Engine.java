@@ -4,6 +4,15 @@ public class Engine {
     private int poser;
     private int efficiency;
 
+    public Engine() {
+        this(10,11);
+    }
+
+    public Engine(int poser, int efficiency) {
+        this.poser = poser;
+        this.efficiency = efficiency;
+    }
+
     public int getPoser() {
         return poser;
     }

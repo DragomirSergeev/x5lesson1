@@ -4,6 +4,14 @@ public class Rectangle implements Shape {
     int lenth;
     int width;
 
+    public Rectangle() {
+    }
+
+    public Rectangle(int lenth, int width) {
+        this.lenth = lenth;
+        this.width = width;
+    }
+
     public int getLenth() {
         return lenth;
     }
@@ -21,7 +29,7 @@ public class Rectangle implements Shape {
     }
 
     @Override
-    public int square() {
+    public double square() {
         return lenth * width;
     }
 }
