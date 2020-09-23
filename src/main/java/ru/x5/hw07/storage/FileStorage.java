@@ -11,7 +11,7 @@ public class FileStorage extends Storage {
     private File store;
 
     public FileStorage() {
-        accounts=new ArrayList<>();
+        accounts = new ArrayList<>();
         System.setProperty("accountStoreFile", "./accountStore"); //Из какого-либо проперти-файла
         store = new File(System.getProperty("accountStoreFile"));
         if (!store.exists()) {
@@ -39,10 +39,10 @@ public class FileStorage extends Storage {
     private void read() {
         synchronized (store) {
             try {
-                accounts=new ArrayList<>();
+                accounts = new ArrayList<>();
                 BufferedReader reader = new BufferedReader(new FileReader(this.store));
                 String acc;
-                while ((acc = reader.readLine())!=null) {
+                while ((acc = reader.readLine()) != null) {
                     String[] data = acc.split(" ");
                     accounts.add(new Account(Integer.parseInt(data[0]),
                             data[1],
@@ -63,10 +63,10 @@ public class FileStorage extends Storage {
         synchronized (store) {
             try {
                 store.delete();
-                store=new File(System.getProperty("accountStoreFile"));
+                store = new File(System.getProperty("accountStoreFile"));
                 FileWriter writer = new FileWriter(this.store);
                 for (Account account : accounts) {
-                    writer.write(account.getAccountId()+" "+account.getAccountHolder()+" "+account.getAmount()+"\n");
+                    writer.write(account.getAccountId() + " " + account.getAccountHolder() + " " + account.getAmount() + "\n");
                 }
                 writer.flush();
                 writer.close();
@@ -77,16 +77,17 @@ public class FileStorage extends Storage {
         }
     }
 
-    public void save(){
+    public void save(Account account) {
         write();
     }
-@Override
+
+    @Override
     public Account findAccountById(int accountId) {
         read();
-        Account result =null;
+        Account result = null;
         for (Account account : accounts) {
             if (account.getAccountId() == accountId) {
-                result= account;
+                result = account;
                 break;
             }
         }

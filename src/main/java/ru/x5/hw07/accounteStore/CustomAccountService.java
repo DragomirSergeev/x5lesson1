@@ -14,7 +14,7 @@ public class CustomAccountService implements AccountService {
         synchronized (account) {
             if (account.getAmount() - ammount < 0) throw new NotEnoughtMoneyException();
             account.setAmount(account.getAmount() - ammount);
-            storage.save();
+            storage.save(account);
         }
     }
 
@@ -37,7 +37,7 @@ public class CustomAccountService implements AccountService {
                 throw new NotEnoughtMoneyException();//на случай выхода за инт
             }
             account.setAmount(account.getAmount() + amount);
-            storage.save();
+            storage.save(account);
         }
     }
 
@@ -53,8 +53,10 @@ public class CustomAccountService implements AccountService {
         }
         synchronized (accountFrom) {
             synchronized (accountTo) {
-                withdraw(from, amount);
-                deposit(to, amount);
+                accountFrom.setAmount(accountFrom.getAmount()-amount);
+                accountTo.setAmount(accountTo.getAmount()+amount);
+                storage.save(accountFrom);
+                storage.save(accountTo);
             }
 
         }

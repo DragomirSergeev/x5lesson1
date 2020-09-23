@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public abstract class Storage {
     ArrayList<Account> accounts;
 
-    public abstract void save();
+    public abstract void save(Account account);
 
     public abstract Account findAccountById(int accountId);
 
